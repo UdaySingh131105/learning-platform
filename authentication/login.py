@@ -13,6 +13,15 @@ def login(username, password):
             return user_detail
     print("Login Failed")
 
+def logout(username):
+    for user_detail in database:
+         if user_detail[0] == username:
+            user_detail[2] = 0
+            return user_detail
+
 # testcase 
 user_detail = login("aakash", "hello@11") 
+print("Status : ", user_detail[2])
+    
+user_detail = logout("aakash") 
 print("Status : ", user_detail[2])
